@@ -4,6 +4,7 @@
    Date: 18 March 2026
 */
 package za.ac.cput.realestate.factory;
+
 import za.ac.cput.realestate.domain.Client;
 import za.ac.cput.realestate.util.Helper;
 
@@ -19,7 +20,9 @@ public class ClientFactory {
                 Helper.isNullOrEmpty(phone) ||
                 Helper.isNullOrEmpty(email) ||
                 !Helper.isPositive(budget) ||
-                Helper.isNullOrEmpty(preferredType)) {
+                Helper.isNullOrEmpty(preferredType) ||
+                !Helper.isValidEmail(email) ||
+                !Helper.isValidPhone(phone)) {
             return null;
         }
 
@@ -34,15 +37,18 @@ public class ClientFactory {
                 .build();
     }
 
-    public static Client createClient(String firstName, String lastName, String phone,
-                                      String email, double budget, String preferredType) {
+    public static Client createClient(String firstName, String lastName,
+                                      String phone, String email, double budget,
+                                      String preferredType) {
 
         if (Helper.isNullOrEmpty(firstName) ||
                 Helper.isNullOrEmpty(lastName) ||
                 Helper.isNullOrEmpty(phone) ||
                 Helper.isNullOrEmpty(email) ||
                 !Helper.isPositive(budget) ||
-                Helper.isNullOrEmpty(preferredType)) {
+                Helper.isNullOrEmpty(preferredType) ||
+                !Helper.isValidEmail(email) ||
+                !Helper.isValidPhone(phone)) {
             return null;
         }
 
@@ -57,6 +63,5 @@ public class ClientFactory {
                 .setBudget(budget)
                 .setPreferredType(preferredType)
                 .build();
-
     }
 }

@@ -1,13 +1,86 @@
-/* Property.java
-   Property model class
-   Author: Francine Mulangu Kasongo (230978649)
-   Date: March 2026
-*/
-
+/*
+Property.Java
+property model class
+Author: Francine Mulangu Kasongo 230978649
+25/03/2026
+ */
 package za.ac.cput.realestate.domain;
 
-    public class Property {
-        // Attributes from UML
+
+public class Property {
+
+
+    private double price;
+    private String propertyId;
+    private String address;
+    private String propertyType;
+    private String status;
+    private int bedrooms;
+    public double kitchen;
+    private double bathrooms;
+    private double garage;
+
+
+    private Property(Client.Builder builder) {
+        this.propertyId = builder.propertyId;
+        this.address = builder.address;
+        this.bedrooms = builder.bedrooms;
+        this.bathrooms = builder.bathrooms;
+        this.propertyType = builder.propertyType;
+        this.status = builder.status;
+        this.kitchen = builder.kitchen;
+        this.garage = builder.garage;
+        this.price = builder.price;
+    }
+
+    public Property(Builder builder) {
+    }
+
+    public String getPropertyID() {
+        return propertyId;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public double getGarage() {
+        return garage;
+    }
+
+    public int getBedrooms() {
+        return bedrooms;
+    }
+
+    public String getPropertyType() {
+        return propertyType;
+    }
+
+    public double getBathrooms() {
+        return bathrooms;
+    }
+
+    public double getKitchen() {
+        return kitchen;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public Builder kitchen(double v) {
+        return null;
+    }
+
+    public String getPropertyId() {
+        return null;
+    }
+
+    public static class Builder {
         private String propertyId;
         private String address;
         private double price;
@@ -15,118 +88,92 @@ package za.ac.cput.realestate.domain;
         private double bathrooms;
         private String propertyType;
         private String status;
+        private double kitchen;
+        public String garage;
 
-        // Private constructor - only Builder can use it
-        private Property(Builder builder) {
-            this.propertyId = builder.propertyId;
-            this.address = builder.address;
-            this.price = builder.price;
-            this.bedrooms = builder.bedrooms;
-            this.bathrooms = builder.bathrooms;
-            this.propertyType = builder.propertyType;
-            this.status = builder.status;
+        public Builder propertyId(String propertyId) {
+            this.propertyId = propertyId;
+            return this;
         }
 
-        // Getters (NO setters - immutable object)
-        public String getPropertyId() {
-            return propertyId;
+        public Builder address(String address) {
+            this.address = address;
+            return this;
         }
 
-        public String getAddress() {
-            return address;
+        public Builder price(double price) {
+            this.price = price;
+            return this;
         }
 
-        public double getPrice() {
-            return price;
+        public Builder bedrooms(int bedrooms) {
+            this.bedrooms = bedrooms;
+            return this;
         }
 
-        public int getBedrooms() {
-            return bedrooms;
+        public Builder propertyType(String propertyType) {
+            this.propertyType = propertyType;
+            return this;
         }
 
-        public double getBathrooms() {
-            return bathrooms;
+        public Builder bathrooms(double bathrooms) {
+            this.bathrooms = bathrooms;
+            return this;
         }
 
-        public String getPropertyType() {
-            return propertyType;
+        public Builder Status(String status) {
+            this.status = status;
+            return this;
         }
 
-        public String getStatus() {
-            return status;
+        public Builder bedrooms(double bathrooms) {
+            this.bathrooms = bathrooms;
+            return this;
         }
 
-        // Builder Pattern Implementation
-        public static class Builder {
-            private String propertyId;
-            private String address;
-            private double price;
-            private int bedrooms;
-            private double bathrooms;
-            private String propertyType;
-            private String status;
+        public Builder kitchen(double kitchen) {
+            this.kitchen = kitchen;
+            return this;
+        }
 
-            public Builder propertyId(String propertyId) {
-                this.propertyId = propertyId;
-                return this;
+        public Builder gargage(String garage) {
+            this.garage = garage;
+            return this;
+        }
+
+        public Property build() {
+            if (propertyId == null || propertyId.isEmpty()) {
+                throw new IllegalArgumentException("PROPERTY ID IS NEEDED");
+
             }
-
-            public Builder address(String address) {
-                this.address = address;
-                return this;
+            if (address == null || address.isEmpty()) {
+                throw new IllegalArgumentException("ADDRESS IS NEEDED");
             }
-
-            public Builder price(double price) {
-                this.price = price;
-                return this;
+            if (price <= 0) {
+                throw new IllegalArgumentException("PRICE MUST BE GREATER THAN ZERO");
             }
-
-            public Builder bedrooms(int bedrooms) {
-                this.bedrooms = bedrooms;
-                return this;
-            }
-
-            public Builder bathrooms(double bathrooms) {
-                this.bathrooms = bathrooms;
-                return this;
-            }
-
-            public Builder propertyType(String propertyType) {
-                this.propertyType = propertyType;
-                return this;
-            }
-
-            public Builder status(String status) {
-                this.status = status;
-                return this;
-            }
-
-            public Property build() {
-                // Validation
-                if (propertyId == null || propertyId.isEmpty()) {
-                    throw new IllegalArgumentException("Property ID is required");
-                }
-                if (address == null || address.isEmpty()) {
-                    throw new IllegalArgumentException("Address is required");
-                }
-                if (price <= 0) {
-                    throw new IllegalArgumentException("Price must be greater than 0");
-                }
-                return new Property(this);
-            }
+            return new Property(this);
         }
 
-        @Override
-        public String toString() {
-            return "Property{" +
-                    "propertyId='" + propertyId + '\'' +
-                    ", address='" + address + '\'' +
-                    ", price=" + price +
-                    ", bedrooms=" + bedrooms +
-                    ", bathrooms=" + bathrooms +
-                    ", propertyType='" + propertyType + '\'' +
-                    ", status='" + status + '\'' +
-                    '}';
+        public Property garage(double v) {
+            this.garage =garage;
+            return this.build();
         }
     }
+
+    @Override
+    public String toString() {
+        return "Property {" +
+                "propertyId=" + propertyId + '/' + ", address= " + address + '/' + ", price = " + price + ", bedrooms=" + bedrooms + ",Kitchen" + kitchen + ", garage" + garage + ", propertyType=" + propertyType + '/' + ", status=" + status + '/' + '}';
+
+
+    }
+
+
+    }
+
+
+
+
+
 

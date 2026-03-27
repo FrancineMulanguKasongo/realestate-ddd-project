@@ -1,18 +1,18 @@
 /* Client.java
    Client model class using Builder Pattern
    Author: Khonzinkosi Khumalo (230231802)
-   Date: 15 March 2026
+   Date: 12 March 2026
 */
 package za.ac.cput.realestate.domain;
 
 public class Client {
-    private final String clientId;
-    private final String firstName;
-    private final String lastName;
-    private final String phone;
-    private final String email;
-    private final double budget;
-    private final String preferredType;
+    private String clientId;
+    private String firstName;
+    private String lastName;
+    private String phone;
+    private String email;
+    private double budget;
+    private String preferredType;
 
     private Client(Builder builder) {
         this.clientId = builder.clientId;
@@ -46,16 +46,48 @@ public class Client {
     }
 
     public static class Builder {
-        private String clientId, firstName, lastName, phone, email, preferredType;
+        private String clientId;
+        private String firstName;
+        private String lastName;
+        private String phone;
+        private String email;
         private double budget;
+        private String preferredType;
 
-        public Builder setClientId(String clientId) { this.clientId = clientId; return this; }
-        public Builder setFirstName(String firstName) { this.firstName = firstName; return this; }
-        public Builder setLastName(String lastName) { this.lastName = lastName; return this; }
-        public Builder setPhone(String phone) { this.phone = phone; return this; }
-        public Builder setEmail(String email) { this.email = email; return this; }
-        public Builder setBudget(double budget) { this.budget = budget; return this; }
-        public Builder setPreferredType(String preferredType) { this.preferredType = preferredType; return this; }
+        public Builder setClientId(String clientId) {
+            this.clientId = clientId;
+            return this;
+        }
+
+        public Builder setFirstName(String firstName) {
+            this.firstName = firstName;
+            return this;
+        }
+
+        public Builder setLastName(String lastName) {
+            this.lastName = lastName;
+            return this;
+        }
+
+        public Builder setPhone(String phone) {
+            this.phone = phone;
+            return this;
+        }
+
+        public Builder setEmail(String email) {
+            this.email = email;
+            return this;
+        }
+
+        public Builder setBudget(double budget) {
+            this.budget = budget;
+            return this;
+        }
+
+        public Builder setPreferredType(String preferredType) {
+            this.preferredType = preferredType;
+            return this;
+        }
 
         public Builder copy(Client client) {
             this.clientId = client.clientId;
