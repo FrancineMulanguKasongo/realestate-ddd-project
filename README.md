@@ -2,9 +2,11 @@
 
 ## 📅 Milestones
 
-| Milestone            | Due Date       | Status        |
+| Milestone           | Due Date      | Status       |
 |---------------------|---------------|--------------|
-| Entity Milestone    | 13 March 2026 | ✅ Complete  |
+| Entity Milestone    | 10 March 2026 | ✅ Complete  |
+| IRepo + Helper      | 11 March 2026 | ✅ Complete  |
+| Domain Milestone    | 13 March 2026 | ✅ Complete  |
 | Factory Milestone   | 16 March 2026 | ✅ Complete  |
 | Repository Milestone| 22 March 2026 | ✅ Complete  |
 | Final Submission    | 27 March 2026 | ✅ Complete  |
