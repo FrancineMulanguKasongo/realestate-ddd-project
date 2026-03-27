@@ -46,6 +46,8 @@ public class Client {
     }
 
     public static class Builder {
+        public String propertyId;
+        public String address;
         private String clientId;
         private String firstName;
         private String lastName;
