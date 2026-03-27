@@ -25,7 +25,7 @@ import za.ac.cput.realestate.domain.Property;
                     .bedrooms(bedrooms)
                     .bathrooms(bathrooms)
                     .propertyType(propertyType)
-                    .status(status)
+                    .Status(status)
                     .build();
         }
     }
