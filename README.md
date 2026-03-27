@@ -9,11 +9,11 @@ A real estate management system built using Java with Domain-Driven Design princ
 ## 👥 Team Members
 | Name | Student Number | GitHub | Responsibilities |
 |------|---------------|--------|------------------|
-| [Paul ] | 220000001 | [kleinworthfx](https://github.com/kleinworthfx)) | Inspection Domain, Project Setup |
-| [Mfanafuth] | 220000002 | [Mfanafuthi12345](https://github.com/Mfanafuthi12345) | Viewing Domain |
-| [Member 3 Name] | 220000003 | [Sinoxolo23](https://github.com/Sinoxolo23) | Agent Domain |
-| [Member 4 Name] | 220000004 | [230231802](https://github.com/230231802) | Client Domain |
-| [Member 5 Name] | 220000005 | [@username](https://github.com) | Property Domain |
+| Paul Khumalo | 220000001 | [kleinworthfx](https://github.com/kleinworthfx)) | Inspection Domain, Project Setup |
+| Mfanafuthi Khumalo | 230018270 | [Mfanafuthi12345](https://github.com/Mfanafuthi12345) | Viewing Domain |
+| Sinoxolo Kobeni | 230801846 | [Sinoxolo23](https://github.com/Sinoxolo23) | Agent Domain |
+| Khonzinkosi Khumalo | 230231802 | [230231802](https://github.com/230231802) | Client Domain |
+| Francine Kasongo | 230978649  | [FrancineMulanguKasongo](https://FrancineMulanguKasongo.com) | Property Domain |
 ## 📅 Milestones
 
 | Milestone           | Due Date      | Status       |
